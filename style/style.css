@@ -1,0 +1,453 @@
+body{
+    width:100%;
+}
+ul,li{
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,p{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+
+}
+/***********_header_*********/
+.conteiner{
+    width:1140px;
+    margin: 0 auto;
+}
+
+ a{
+    text-decoration: none;
+}
+.btn_login{
+    margin-left: auto;
+
+}
+.btn_login a{
+    display: block;
+    background: darkgreen;
+    border-radius: 5px;
+    color:#fff;
+    padding: 11px 25px;
+
+}
+.nav{
+    display: flex;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    margin-left: auto;
+
+}
+.menu_item{
+    padding-right: 60px;
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+}
+.menu_item a{
+    color: forestgreen;
+}
+.menu_item a:hover{
+    color: darkgreen;
+}
+.btn_login a:hover{
+    background: green;
+}
+
+.offer{
+    width:1350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background: url("../img/fon.jpg") no-repeat center top;
+    min-height: 550px;
+}
+
+.offer_text{
+
+    font-family: 'Merriweather', serif;
+    color:white;
+    text-shadow: 1px 1px 2px black, 0 0 1em greenyellow;
+}
+.offer_content{
+    padding-top: 100px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.offer_img{
+    margin-right: 200px;
+}
+.offer_img img{
+    width:400px;
+}
+.contact{
+    width:1350px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+    background: lightgray;
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+}
+
+.phone{
+    display: flex;
+    align-items: center;
+}
+.phone p{
+    margin-left: 30px;
+}
+.contact_info{
+    font-family: 'Merriweather', serif;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.main_content{
+    min-height: 750px;
+    width:100%;
+/***********_Вывод всех теплиц_*********/
+}
+.title_single h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color: green;
+    text-transform: uppercase;
+}
+.title_single{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.single{
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    font-family: 'Merriweather', serif;
+    width:350px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    
+}
+
+.single_item{
+    position: relative;
+    transition: transform 0.2s;
+    margin-top:30px;
+    min-width:300px;
+    min-height: 10vh;
+    border:1px outset rgb(199, 201, 204);
+    border-radius: 30px;
+    background: #E6FCF4;
+}
+
+.single_item:hover{
+    box-shadow: 1px 1px 15px green;
+}
+
+.single_name{
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color:green;
+    border-radius: 30px;
+}
+.single_name h2{
+    padding: 10px;
+    color:#fff;
+}
+.single_img{
+    min-width:100%;
+    display: flex
+    justify-content:center;
+    align-items: center;
+}
+.single_img img{
+    margin:10px;
+    width:300px;
+}
+.plus_single{
+   margin-left: 5px;
+   margin-top: 18px;
+}
+.plus_single,.plus_single:before{
+    display: block;
+    position: absolute;
+    width:30px;
+    height: 4px;
+    background-color:#64DD64;
+    box-shadow: 0 0 2px green;
+}
+.plus_single:before{
+    content: "";
+    transform: rotate(90deg);
+    
+}
+.single_add{
+    display: block;
+    height: 40px;
+    width: 40px;
+    border:3px double green;
+    border-radius: 30px;
+    margin-left: 50px;
+    transition: all 0.1s;
+}
+.single_add:hover{
+    border-color:#7BF5A6;
+    box-shadow: 0 0 15px #7BFA8D;
+    transform: rotate(90deg);
+}
+
+/***********_Модальное окно_*********/
+.modal_window_single{
+    display: none;
+    transition: all 0.2s;
+}
+.modal_window_single1{
+     display: none;
+}
+.modal_window{
+      font-family: 'Merriweather', serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 300vh;
+    background: rgba(48, 48, 48, 0.8);
+    display: flex;
+
+    justify-content: center;
+}
+.modal_single{
+    margin-top: 200px;
+    height: 250px;
+    width:500px;
+    background: #F4F2F2;
+    border:1px outset grey;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.auth_item{
+    margin-left: 100px;
+}
+.title_modal{
+    margin-top: 20px;
+    
+    text-align: center;
+}
+.modal_close{
+    position: fixed;
+    margin-left: 500px;
+    margin-top: -30px;
+    transform: rotate(45deg);
+
+}
+.plus_delete{
+    transform: rotate(45deg);
+    position: absolute;
+    left: 170px;
+    top: 110px;
+}
+
+
+
+.plus_delete .plus_single, .plus_delete .plus_single:before{
+    background-color: red;
+}
+.modal_close .plus_single,.modal_close .plus_single:before{
+    background-color: red;
+}
+.input_modal{
+    margin-top: 40px;
+    padding-left: 10px;
+   
+    border: 1px solid #93CB9C; 
+   border-radius: 3px; 
+   background: #ffffff !important; 
+   outline: none; 
+   height: 30px; 
+   width: 300px; 
+   color: #1C6A16; 
+   font-weight: bold;
+   font-size: 15px; 
+}
+.modal_add{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.button_modal{
+    width:300px;
+    display: flex;
+    justify-content: space-between;
+}
+.button_modal button{
+      font-family: 'Merriweather', serif;
+     outline: none;
+    margin-top: 20px;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+}
+.active{
+    display: block;
+}
+
+
+/*************************************/
+
+/***********_Стили отдельной для теплицы_*********/
+.greenhouse_main{
+     font-family: 'Merriweather', serif;
+    background-color: rgba(118, 245, 122, 0.3);
+    border-bottom: 1px outset grey;
+    border-top:2px outset grey;
+    height: 600px;
+}
+
+.container{
+    margin: 0 auto;
+
+}
+.main_content_seeds{
+    width:1350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    border-bottom: 5px outset grey;
+   
+}
+.greenhouse_main{
+    width: 100%;
+    display: flex;
+}
+.seeds{
+    width: 20%;
+    border-right: 1px solid black;
+}
+.sectros{
+    width: 100%;
+    background: url(../img/peyzah.jpg) center no-repeat;
+}
+.img_dom{
+    min-height: 250px;
+    margin-left: 800px;
+    margin-top: 150px;
+    background: url(../img/dom.png) no-repeat;
+}
+
+.seeds_title{
+    background:linear-gradient(to top left, #94F096, #0C9823); /* radial-gradient(#BCF9C7, #16861C);*/
+    color:#fff;
+    width:100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.title_single span{
+    color:#2DE02D;
+    font-family: 'Merriweather', serif;
+
+}
+.seeds_menu{
+    overflow-y: scroll;
+    width: 100%;
+    height:535px;
+
+}
+#scroll::-webkit-scrollbar{
+    width: 10px;
+    background-color: #51F16B;
+}
+#scroll::-webkit-scrollbar-thumb{
+    background-color: #16A520;
+}
+.package_seeds{
+    width: 150px;
+    height: 250px;
+    background: #E6E5E5;
+    border:1px outset #ADABAB;
+    margin:20px auto;
+}
+.name_package{
+    font-size: 20px;
+    padding:15px 0;
+    color:#fff;
+    text-shadow: 0px 0px 10px green;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    background: rgba(48, 48, 48, 0.3);
+}
+.img_package{
+    height: 120px;
+    width: 120px;
+    border:1px solid green;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../img/icon-beeds.png") center no-repeat;
+}
+/*****************Грядки********************/
+.beds{
+    display: flex;
+    align-items: center;
+    
+}
+.beds img{
+    width:300px;
+    height: 150px;
+    margin-top: -200px;
+}
+.beds_item{
+    margin-left: 20px;
+}
+
+.germs{
+    position: relative;
+    width:300px;
+    height: 118px;
+}
+.germs_item{
+    display: none;
+    background: url("../img/gryadka2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width:300px;
+    height: 118px;
+}
+.addBeds{
+    display: flex;
+    margin-left: 50px;
+}
+.disactive{
+    display: none;
+}
+.register_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.germs_time{
+    display: none;
+    text-align: center;
+}
+.time_package{
+    font-size: 10px;
+    font-weight: bold;
+    color:#258623;
+
+}
