@@ -84,6 +84,5 @@ require "header.php" ?>
     </article>
     <script src="js/script.js">
     </script>
-    <p></p>
 </body>
 </html>
