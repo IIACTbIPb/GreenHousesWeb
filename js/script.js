@@ -30,12 +30,12 @@ $(function(){
 			$('.modal_window_single1').toggleClass('active');
 		});
 
-
-
+	let numberSeeds;
 		$('.package_seeds').draggable({
 				helper: "clone",
 					start: function(){//Происходит в момент начала перетаскивания
-						
+						numberSeeds = $(this).attr('data-num');
+						//console.log(numberSeeds);
 						$('.seeds_menu').css({
 							overflow: 'visible',
 
@@ -49,82 +49,92 @@ $(function(){
 					}
 				});
 
-
-			var time = 0;
+				function gardenCheck(germs_item, germs_time){
+						$(germs_item).css({
+							display: 'block'
+						});
+						$(germs_time).css({
+							display: 'block'
+						});
+						timer(GrowingTime[numberSeeds], germs_time);
+					}
+			var SectorsSeeds = {
+				gryadka0:0,
+				gryadka1:0,
+				gryadka2:0
+			}
 			$('.beds > .graydka > .beds_item').droppable({
 					drop: function(){
-
-						var nameId = $('.img_package > h3:last').text();
-						var idBeds = 0;
 						var bedId = $(this).text();
 						if(bedId == 1){
-							idBeds = bedId;
-							$('.germs_item:first').css({ //first
-								display: 'block'
-							});
-							$('.germs_time:first').css({ //first
-								display: 'block'
-							});
-							getCountdown();
-							setInterval(function () { getCountdown(); }, 1000);
-							
-						}else if (bedId == 3) {
-							idBeds = bedId;
-							$('.germs_item:last').css({ //last
-								display: 'block'
-							});
-							$('.germs_time:last').css({ //first
-								display: 'block'
-							});
-							getCountdown();
-							setInterval(function () { getCountdown(); }, 1000);
-							
+						SectorsSeeds.gryadka0 = numberSeeds;	
+						gardenCheck('.germs_item1','.germs_time1');
 						}else if(bedId == 2){
-							idBeds = bedId;
-							$('.germs_item:odd').css({ //odd
-								display: 'block'
-							});
-							$('.germs_time:odd').css({ //first
-								display: 'block'
-							});
-							getCountdown();
-							setInterval(function () { getCountdown(); }, 1000);
+						SectorsSeeds.gryadka1 = numberSeeds;
+						gardenCheck('.germs_item2','.germs_time2');
+						}else if (bedId == 3) {
+						SectorsSeeds.gryadka2 = numberSeeds;
+						gardenCheck('.germs_item3','.germs_time3');
+						
 						}
 
-						$.get(
-							'../addSowing.php',
-							{nameId: nameId,
-							 idBeds: idBeds}
-							);
-						
+						// $.get(
+						// 	'../addSowing.php',
+							
+						// 	);
 					}
 			});	
+			
 
-		 var target_date = new Date().getTime() + (5*3600); // установить дату обратного отсчета
-		var  seconds; // переменные для единиц времени
-		 var countdown = document.querySelectorAll(".germs_time"); // получить элемент тега
-		function getCountdown(){
-		 
-		    var current_date = new Date().getTime();
-		    var seconds_left = (target_date - current_date) / 1000;
-		           
-		    seconds = pad( parseInt( seconds_left % 60 ) );
-		 	
-		    // строка обратного отсчета  + значение тега
-		    for (var i = 0; i < countdown.length; i++) {
-		    	countDowns = countdown[i];
-		    	countDowns.innerHTML = "<span>" + seconds + "сек</span>"; 
-		    	if(seconds==0){
-		    		$('.germs_item').css({ 
-								background: 'url(../img/gryadka1.png)'
+		
+			
+			console.log(img); //Массив картинок семян
+			function timer(seconds,selector) {
+			let NumSeeds=0;
+			var seconds_timer_id = setInterval(function() {
+				if (seconds > 0) {
+					seconds--;
+				if (seconds < 10) {
+					seconds = 0 + seconds;
+				}
+				$(selector).text(seconds);
+				//console.log($(selector).text());
+					if($(selector).text()==0){
+					let nomer = $(selector).attr('data-timeNum');
+					//console.log(nomer);
+		    		if(nomer == 1){
+		    		$('.germs_item1').css({
+								background: 'url(../img/'+img[SectorsSeeds.gryadka0]+')'
 							});
-		    		$('.germs_time').hide();
-		    	}
+		    		}
+		    		if(nomer == 2){
+		    		$('.germs_item2').css({
+								background: 'url(../img/'+img[SectorsSeeds.gryadka1]+')'
+							});
+		    		}
+		    		if(nomer == 3){
+		    		$('.germs_item3').css({
+								background: 'url(../img/'+img[SectorsSeeds.gryadka2]+')'
+							});
+		    		}
+
+		    		
+
+		    		$(selector).hide();
+		    		$('.germs_item'+nomer).addClass("ReadyProduct");
+		    		$('.germs_item'+nomer).click(function(){
+		    			$(this).hide();
+		    			$(this).css({
+								background: 'url(../img/gryadka2.png) no-repeat center'
+							});
+		    			$(this).toggleClass("ReadyProduct");
+		    		});
+		     		}
+				} else {
+					clearInterval(seconds_timer_id);
+				}
+			}, 1000);
 		}
-		}
-		 
-		function pad(n) {
-		    return (n < 10 ? '0' : '') + n;
-		}
+
 	
 });
