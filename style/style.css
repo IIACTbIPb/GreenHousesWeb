@@ -409,26 +409,27 @@ h1,h2,h3,h4,h5,p{
 }
 .beds img{
     width:300px;
-    height: 150px;
-    margin-top: -200px;
+    height: 160px;
+    
 }
 .beds_item{
     margin-left: 20px;
 }
 
 .germs{
-    position: relative;
-    width:300px;
-    height: 118px;
+   position: absolute;
+   width:300px;
 }
-.germs_item{
+.germs_item1,.germs_item2,.germs_item3{
+    position: relative;
     display: none;
     background: url("../img/gryadka2.png");
     background-repeat: no-repeat;
     background-position: center;
-    width:300px;
-    height: 118px;
+    width:298px;
+    height: 120px;
 }
+
 .addBeds{
     display: flex;
     margin-left: 50px;
@@ -441,13 +442,20 @@ h1,h2,h3,h4,h5,p{
     justify-content: center;
     align-items: center;
 }
-.germs_time{
-    display: none;
+.germs_time1,.germs_time2,.germs_time3{
     text-align: center;
+    display: none;
+    color:#0012FB;
+    font-weight: bold;
 }
 .time_package{
     font-size: 10px;
     font-weight: bold;
     color:#258623;
 
+}
+.ReadyProduct:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(255,255,0,0.6), 0 0 6px 0 rgba(255,255,0,0.8), 0 0 10px 0 rgba(255,255,0,0.6);
+    border-radius: 20px;
 }
