@@ -8,7 +8,7 @@
             $login = " Привет ".$name;
             $id = user_id($name,$password);
         }
-       
+   
 ?>
 
 <!DOCTYPE html>

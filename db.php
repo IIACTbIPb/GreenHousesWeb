@@ -3,7 +3,7 @@
   $dbhost = 'localhost';
   $dbname = "greenhouses";
   $username = "root";
-  $password = "";
+  $password = "root";
 
 
   $db = new PDO("mysql:host=$dbhost; dbname=$dbname",$username,$password);
